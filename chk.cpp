@@ -13,9 +13,9 @@ void getLocalUTCTime(string &time, string &code) {
   int hour = tm_utc->tm_hour;
   int minute = tm_utc->tm_min;
   int sum = year + month + day + hour + minute;
-  int code = sum ^ 64 % 10000;
-  time = to_string(year) + "-" + to_string(month) + "-" + to_string(day) + "-" + to_string(hour) + "-" + to_string(minute) + "-" + to_string(second);
-  code = to_string(code);
+  int otp = sum ^ 64 % 10000;
+  time = to_string(year) + "-" + to_string(month) + "-" + to_string(day) + "-" + to_string(hour) + "-" + to_string(minute);
+  code = to_string(otp);
 }
 
 int main() {

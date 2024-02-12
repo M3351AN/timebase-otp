@@ -7,7 +7,7 @@ void getLocalUTCTime(string &time, string &code) {
   auto now = chrono::system_clock::now();
   auto now_utc = chrono::system_clock::to_time_t(now);
   struct tm tm_utc;
-  gmtime_s(&info, &now_utc);
+  gmtime_s(&tm_utc, &now_utc);
   int year = tm_utc.tm_year + 1900;
   int month = tm_utc.tm_mon + 1;
   int day = tm_utc.tm_mday;

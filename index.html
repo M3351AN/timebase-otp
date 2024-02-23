@@ -35,7 +35,7 @@ function displayTimeAndCode() {
 window.onload = displayTimeAndCode;
 <script>
   setInterval(() => {
-    generateOtp();
+    displayTimeAndCode();
   }, 1000);
 </script>
 </head>
@@ -43,6 +43,6 @@ window.onload = displayTimeAndCode;
 <h1>otp generator</h1>
 <p id="time"></p>
 <p id="code"></p>
-<progress id="progress" value="0" max="30"></progress>
+<progress id="progress" value="0" max="60"></progress>
 </body>
 </html>

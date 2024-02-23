@@ -28,16 +28,21 @@ function displayTimeAndCode() {
   var codeString = code.toString(); 
   document.getElementById("time").innerHTML = "current utc = " + timeString; 
   document.getElementById("code").innerHTML = "otp = " + codeString; 
+  const remaining = 60 - (Date.now() / 1000) % 60;
+  document.getElementById("progress").value = remaining;
 }
 
 window.onload = displayTimeAndCode;
-// refresh per min
-setInterval(displayTimeAndCode, 60000);
+<script>
+  setInterval(() => {
+    generateOtp();
+  }, 1000);
 </script>
 </head>
 <body>
 <h1>otp generator</h1>
 <p id="time"></p>
 <p id="code"></p>
+<progress id="progress" value="0" max="30"></progress>
 </body>
 </html>
